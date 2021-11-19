@@ -63,7 +63,7 @@ class ClienteController extends Controller
     {
         try
         {
-            $clientes = Cliente::where('placa_carro',$numero)->get();
+            $clientes = Cliente::where('placa_carro','LIKE','%'.$numero.'%')->get();
 
             if (count($clientes)>0):
                 return Response::json(['clientes' => $clientes], 200);
