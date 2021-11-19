@@ -37,14 +37,14 @@ Para levantar os containers
 ./vendor/bin/sail up -d
 ```
 
-Para rodar as migrations
-```
-./vendor/bin/sail artisan migrate
-```
-
 Para fazer a .env apartir da .env.example e verifique se está de acordo com o banco e se foi criado o mesmo
 ```
 cp .env.example .env
+```
+
+Para rodar as migrations
+```
+./vendor/bin/sail artisan migrate
 ```
 
 Gerar uma chave para a aplicação
