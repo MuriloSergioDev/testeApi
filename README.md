@@ -20,9 +20,36 @@
 ## Instalação
 Instalar o docker
 
-Na pasta raiz do projeto utilize o codigo abaixo:
+Na pasta raiz do projeto utilize os codigos abaixo:
+
+Para rodar o composer install
 ```
-./vendor/bin/sail up
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/opt \
+    -w /opt \
+    laravelsail/php80-composer:latest \
+    composer install --ignore-platform-reqs
+```
+
+Para levantar os containers
+```
+./vendor/bin/sail up -d
+```
+
+Para rodar as migrations
+```
+./vendor/bin/sail artisan migrate
+```
+
+Para fazer a .env apartir da .env.example
+```
+cp .env.example .env
+```
+
+Gerar uma chave para a aplicação
+```
+./vendor/bin/sail artisan key:generate
 ```
 
 Pronto! os endpoints já estão disponiveis em localhost/api.
