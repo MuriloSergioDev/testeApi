@@ -42,7 +42,7 @@ Para rodar as migrations
 ./vendor/bin/sail artisan migrate
 ```
 
-Para fazer a .env apartir da .env.example
+Para fazer a .env apartir da .env.example e verifique se está de acordo com o banco e se foi criado o mesmo
 ```
 cp .env.example .env
 ```
